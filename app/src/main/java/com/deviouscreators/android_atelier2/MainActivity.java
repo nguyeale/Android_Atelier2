@@ -4,9 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import static android.R.attr.value;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    private int varA;
+    private String varB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         Log.v(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("someVarA", varA);
+        outState.putString("someVarB", varB);
+        Log.v(TAG, "onSaveInstanceState");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        varA = savedInstanceState.getInt("varA");
+        varB = savedInstanceState.getString("varB");
+        Log.v(TAG, "onRestoreInstanceState");
     }
 
 }
