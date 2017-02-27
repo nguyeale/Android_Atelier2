@@ -16,6 +16,7 @@ import static android.R.attr.value;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    private static final String EXTRA_MESSAGE = "ExtraMessage";
     private int varA;
     private String varB;
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, Activity2.class);
+                // Intent intent = new Intent("android.media.action.IMAGE_CAPTURE"); Ouvre l'appareil photo
+                intent.putExtra(EXTRA_MESSAGE, "Hello World !");
                 startActivity(intent);
             }
         });
