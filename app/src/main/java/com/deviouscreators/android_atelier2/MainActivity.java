@@ -25,11 +25,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new OnClickListener() {
+        final Button buttonActivity2 = (Button)findViewById(R.id.button);
+        buttonActivity2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, Activity2.class);
+                // Intent intent = new Intent("android.media.action.IMAGE_CAPTURE"); Ouvre l'appareil photo
+                intent.putExtra(EXTRA_MESSAGE, "Hello World !");
+                startActivity(intent);
+            }
+        });
+        final Button buttonFragmentActivity = (Button)findViewById(R.id.button3);
+        buttonFragmentActivity.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
                 // Intent intent = new Intent("android.media.action.IMAGE_CAPTURE"); Ouvre l'appareil photo
                 intent.putExtra(EXTRA_MESSAGE, "Hello World !");
                 startActivity(intent);

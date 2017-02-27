@@ -10,11 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.deviouscreators.android_atelier2.MainActivity">
 
-    <Button
-        android:text="Change Activity"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Activity2"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:id="@+id/button3" />
+
+        <Button
+            android:text="FragmentActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+    </LinearLayout>
+
 </RelativeLayout>
